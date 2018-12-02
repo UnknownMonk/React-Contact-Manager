@@ -4,19 +4,26 @@ import { Provider } from './context';
 
 import Contacts from './components/constacts/Contacts';
 import Header from './components/layout/Header';
+import About from './components/pages/About';
 import AddContact from './components/constacts/AddContact';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <Provider>
-        <div className="App">
-          <Header branding="Contact Manager" />
-          <div className="container">
-            <AddContact />
-            <Contacts />
+        <Router>
+          <div className="App">
+            <Header branding="Contact Manager" />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact/add" component={AddContact} />
+              </Switch>
+            </div>
           </div>
-        </div>
+        </Router>
       </Provider>
     );
   }
