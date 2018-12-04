@@ -7,7 +7,7 @@ import Header from './components/layout/Header';
 import About from './components/pages/About';
 import AddContact from './components/constacts/AddContact';
 import EditContact from './components/constacts/EditContact';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFound from './components/pages/NotFound';
 
 class App extends Component {
